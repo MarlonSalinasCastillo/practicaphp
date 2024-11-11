@@ -34,13 +34,13 @@
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
         while ($fila = mysqli_fetch_object($resultado)) {
-         echo "<tr><td> " Juan Pérez
-         "</td><td>" Excelente
-         "</td><td>"Calle Ficticia 123
-         "</td><td>" Chimbote
-         "</td><td>" Huaraz
-         "</td><td>" Peru
-         "</td><td>" 12345
+         echo "<tr><td> " .$fila->nombre . 
+         "</td><td>" . $fila->calificacion_crediticia .
+         "</td><td>" . $fila->direccion .
+         "</td><td>" . $fila->ciudad .
+         "</td><td>" . $fila->provincia .
+         "</td><td>" . $fila->pais .
+         "</td><td>" . $fila->codigo_postal .
          "</td></tr>";
        }
        ?>
