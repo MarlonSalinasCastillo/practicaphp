@@ -1,6 +1,6 @@
 <?php
 // Conectar a la base de datos
-$conexion = mysqli_connect('localhost', 'root', 'tu_contraseña', 'PRUEBA'); // Reemplaza 'tu_contraseña' con la contraseña de MySQL
+$conexion = mysqli_connect('localhost', 'root', '123456', 'PRUEBA'); // Reemplaza 'tu_contraseña' con la contraseña de MySQL
 
 // Verificar si la conexión fue exitosa
 if (!$conexion) {
