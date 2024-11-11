@@ -33,16 +33,21 @@
         $cadenaSQL = "select * from s_cliente";
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
-        while ($fila = mysqli_fetch_object($resultado)) {
-         echo "<tr><td> " .$fila->nombre . 
-         "</td><td>" . $fila->calificacion_crediticia .
-         "</td><td>" . $fila->direccion .
-         "</td><td>" . $fila->ciudad .
-         "</td><td>" . $fila->provincia .
-         "</td><td>" . $fila->pais .
-         "</td><td>" . $fila->codigo_postal .
-         "</td></tr>";
-       }
+        "</td></tr>";
+       while ($fila = mysqli_fetch_object($resultado)) {
+                    echo "<tr>
+                              <td>" . htmlspecialchars($fila->id) . "</td>
+                              <td>" . htmlspecialchars($fila->nombre) . "</td>
+                              <td>" . htmlspecialchars($fila->telefono) . "</td>
+                              <td>" . htmlspecialchars($fila->direccion) . "</td>
+                              <td>" . htmlspecialchars($fila->ciudad) . "</td>
+                              <td>" . htmlspecialchars($fila->provincia) . "</td>
+                              <td>" . htmlspecialchars($fila->pais) . "</td>
+                              <td>" . htmlspecialchars($fila->codigo_postal) . "</td>
+                              <td>" . htmlspecialchars($fila->calificacion_crediticia) . "</td>
+                              <td>" . htmlspecialchars($fila->comentarios) . "</td>
+                          </tr>";
+                }
        ?>
      </tbody>
    </table>
