@@ -1,19 +1,24 @@
 <?php
 // Conectar a la base de datos
-$conexion = mysqli_connect('localhost', 'root', '123456', 'PRUEBA'); // Reemplaza 'tu_contraseña' con la contraseña de MySQL
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Verificar si la conexión fue exitosa
+$conexion = mysqli_connect('localhost', 'root', '123456', 'PRUEBA'); 
+
 if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
+}else{
+     echo "Conexión exitosa a la base de datos.<br>";
 }
 
-// Consulta SQL para recuperar todos los clientes
 $cadenaSQL = "SELECT * FROM s_cliente";
 $resultado = mysqli_query($conexion, $cadenaSQL);
 
-// Verificar si la consulta fue exitosa
 if (!$resultado) {
-    die('Error en la consulta: ' . mysqli_error($conexion));
+    die('Error en la consulta SQL: ' . mysqli_error($conexion));
+} else {
+    echo "Consulta SQL ejecutada correctamente.<br>";
 }
 ?>
 
