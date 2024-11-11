@@ -59,16 +59,16 @@ if (!$resultado) {
                 // Mostrar los resultados en la tabla
                 while ($fila = mysqli_fetch_object($resultado)) {
                     echo "<tr>
-                              <td>" . ($fila->id) . "</td>
-                              <td>" . ($fila->nombre) . "</td>
-                              <td>" . ($fila->telefono) . "</td>
-                              <td>" . ($fila->direccion) . "</td>
-                              <td>" . ($fila->ciudad) . "</td>
-                              <td>" . ($fila->provincia) . "</td>
-                              <td>" . ($fila->pais) . "</td>
-                              <td>" . ($fila->codigo_postal) . "</td>
-                              <td>" . ($fila->calificacion_crediticia) . "</td>
-                              <td>" . ($fila->comentarios) . "</td>
+                              <td>" . htmlspecialchars($fila->id) . "</td>
+                  <td>" . htmlspecialchars($fila->nombre) . "</td>
+                  <td>" . htmlspecialchars($fila->telefono) . "</td>
+                  <td>" . htmlspecialchars($fila->direccion) . "</td>
+                  <td>" . htmlspecialchars($fila->ciudad) . "</td>
+                  <td>" . htmlspecialchars($fila->provincia) . "</td>
+                  <td>" . htmlspecialchars($fila->pais) . "</td>
+                  <td>" . htmlspecialchars($fila->codigo_postal) . "</td>
+                  <td>" . htmlspecialchars($fila->calificacion_crediticia) . "</td>
+                  <td>" . htmlspecialchars($fila->comentarios) . "</td>
                           </tr>";
                 }
                 ?>
